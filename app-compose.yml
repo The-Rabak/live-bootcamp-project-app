@@ -1,5 +1,5 @@
 networks:
-  project:
+  live-bootcamp-project:
     name: live-bootcamp-project
 services:
   app-service:
