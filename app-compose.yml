@@ -1,3 +1,6 @@
+networks:
+  project:
+    name: live-bootcamp-project
 services:
   app-service:
     build:
@@ -6,6 +9,5 @@ services:
     restart: "always" # automatically restart container when server crashes
     environment: # set up environment variables
       AUTH_SERVICE_IP: ${AUTH_SERVICE_IP:-localhost} # Use localhost as the default value
-    depends_on: # only run app-service after auth-service has started
-      auth-service:
-        condition: service_started
+    networks:
+      - live-bootcamp-project
